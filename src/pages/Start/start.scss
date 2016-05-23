@@ -1,0 +1,49 @@
+@import "../../assets/css/_variables.scss";
+
+.start{
+  &__article{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: auto;
+    position: relative;
+    text-align: center;
+    &--first{
+      margin-top: 150px;
+    }
+    &--white{
+      background-color: $color-white;
+      color: $color-bg;
+    }
+  }
+  &__info{
+    line-height: 50px;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+  &__contact{
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+    &--left{
+      left: 10px;
+    }
+    &--right{
+      right: 10px;
+    }
+  }
+  &__h2.h2{
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  &__list{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    &-item{
+      display: inline-block;
+      padding: 5px;
+    }
+  }
+}

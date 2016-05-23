@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%= htmlWebpackPlugin.options.title || 'Manuel Villing - Webdevelopment Portfolio' %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link rel="stylesheet" href="<%- htmlWebpackPlugin.files.css[css] %>">
+    <% } %>
+  </head>
+  <body class="<%= htmlWebpackPlugin.options.environment %>">
+    <div id="app"></div>
+
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script typ="text/javascript" src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+    <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Open+Sans:400,700:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+  </body>
+</html>

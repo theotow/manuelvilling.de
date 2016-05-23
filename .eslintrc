@@ -1,0 +1,17 @@
+{
+  "extends": ["standard", "standard-react"],
+  "parser": "babel-eslint",
+  "rules": {
+    "no-labels": 0,
+    "react/jsx-no-bind": 0,
+    "react/jsx-boolean-value": 0
+  },
+  "globals": {
+    "global": true,
+    "__DEVTOOLS__": true,
+    "__DEV__": true,
+    "describe": true,
+    "it": true,
+    "expect": true
+  }
+}
