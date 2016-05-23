@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const TARGET = process.env.npm_lifecycle_event
 const LOCAL_PORT = 3001
@@ -55,7 +56,7 @@ const common = {
         loader: 'html-loader'
       },
       {
-        test: /(\.svg|\.eot|\.woff|\.woff2|\.ttf)$/,
+        test: /(\.svg|\.eot|\.woff|\.woff2|\.ttf|\.png)$/,
         loader: 'file-loader'
       },
       {
@@ -83,8 +84,12 @@ const common = {
     modulesDirectories: ['node_modules', './src']
   },
   plugins: [
+    new CopyWebpackPlugin([
+      { from: 'CNAME', to: 'CNAME', toType: 'file' }
+    ]),
     new HtmlWebpackPlugin({
       template: 'index.template.ejs',
+      favicon: 'favicon.png',
       environment: 'dev',
       showErrors: false,
       inject: false

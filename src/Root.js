@@ -5,6 +5,7 @@ import Routes from './Routes'
 
 require('bootstrap/dist/css/bootstrap.css')
 require('./assets/css/index.css')
+require('./favicon.png')
 
 if (module.hot) {
   module.hot.decline('./Routes.js')

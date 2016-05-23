@@ -23,7 +23,7 @@ class Start extends Component {
       url: 'http://bottlesxo.com'
     }, {
       name: 'need.io',
-      url: 'https://need.io'
+      url: 'https://github.com/theotow/need.io'
     }, {
       name: 'sensisworld.com',
       url: 'https://sensisworld.com'
