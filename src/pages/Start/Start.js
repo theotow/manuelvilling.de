@@ -4,6 +4,7 @@ import { map } from 'lodash'
 import Header from '../../components/Header/Header'
 import Button from '../../components/Button/Button'
 import Image from '../../components/Image/Image'
+import request from 'request'
 
 require('./start.scss')
 
@@ -19,20 +20,31 @@ class Start extends Component {
       name: 'gitmonitor',
       url: 'https://github.com/theotow/gitmonitor-ios'
     }, {
-      name: 'bottlesxo.com',
-      url: 'http://bottlesxo.com'
-    }, {
       name: 'need.io',
       url: 'https://github.com/theotow/need.io'
     }, {
-      name: 'sensisworld.com',
-      url: 'https://sensisworld.com'
+      name: 'costring.co',
+      url: 'https://costring.co'
     }]
+    this.state = { posts: [] }
     this.data.customers = ['bottlesxo']
-
+    this.feedUrl = 'https://manuelvilling.de/rss?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40theotow%3Fformat%3Djson'
     this.customers = this.customers.bind(this)
     this.projects = this.projects.bind(this)
     this.skills = this.skills.bind(this)
+  }
+
+  componentDidMount () {
+    const that = this
+    request(this.feedUrl, {
+      withCredentials: false
+    }, function (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        that.setState({
+          posts: JSON.parse(body).items
+        })
+      }
+    })
   }
 
   skills () {
@@ -60,6 +72,24 @@ class Start extends Component {
       return (
         <a href={project.url} key={key} className={'start__list-item'}>
           <Button text={project.name} />
+        </a>
+      )
+    })
+  }
+
+  fixDate (date) {
+    const fixedDate = date.split(' ')[0]
+    return (
+      <span>{fixedDate}</span>
+    )
+  }
+
+  posts (postarray) {
+    return map(this.state.posts, (post) => {
+      return (
+        <a href={post.link} target='_blank' key={post.guid} className={'start__blogpost'}>
+          <div className={'start__blogpost-title'}>{post.title}</div>
+          <div className={'start__blogpost-date'}>{this.fixDate(post.pubDate)}</div>
         </a>
       )
     })
@@ -96,7 +126,7 @@ class Start extends Component {
               </div>
             </div>
             <div className={'start__article start__article--blue'}>
-              <h2 className={'h2 start__h2'}>Projects</h2>
+              <h2 className={'h2 start__h2'}>Own Projects</h2>
               <div className={'start__list'}>
                 {this.projects()}
                 <div className={'start__info'}>
@@ -104,6 +134,12 @@ class Start extends Component {
                 </div>
               </div>
             </div>
+            {this.state.posts.length > 0 && <div className={'start__article start__article--blue'}>
+              <h2 className={'h2 start__h2'}>Latest Blogposts</h2>
+              <div className={'start__list'}>
+                {this.posts()}
+              </div>
+            </div>}
           </div>
         </div>
       </div>

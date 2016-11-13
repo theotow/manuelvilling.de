@@ -1,6 +1,19 @@
 @import "../../assets/css/_variables.scss";
 
 .start{
+  &__blogpost {
+    color: $color-white;
+    text-decoration: none;
+    line-height: 34px;
+    &-date{
+      margin-top: -10px;
+      font-style: italic;
+    }
+    &:hover, &:focus, &:visited{
+      color: $color-white;
+      text-decoration: none;
+    }
+  }
   &__article{
     padding-top: 50px;
     padding-bottom: 50px;

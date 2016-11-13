@@ -44,6 +44,12 @@ const common = {
     warnings: true,
     publicPath: true
   },
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
   module: {
     loaders: [
       {
@@ -54,6 +60,10 @@ const common = {
       {
         test: /\.html$/,
         loader: 'html-loader'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
         test: /(\.svg|\.eot|\.woff|\.woff2|\.ttf|\.png)$/,
