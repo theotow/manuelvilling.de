@@ -1,0 +1,48 @@
+service: app
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-west-2
+  memorySize: 512
+  timeout: 6
+  versionFunctions: false
+
+plugins:
+  - serverless-domain-manager
+  # - serverless-webpack
+
+package:
+  individually: true
+  excludeDevDependencies: true
+
+functions:
+  web:
+    handler: handler.handler
+    integration: lambda
+    environment:
+      NODE_ENV: production
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+    package:
+      exclude:
+        - src/**
+        - tests/**
+      include:
+        - ./.next/**
+
+custom:
+  domainName:
+    prod: manuelvilling.de
+    dev: dev.manuelvilling.de
+  customDomain:
+    domainName: ${self:custom.domainName.${opt:stage, 'dev'}}
+    basePath: ''
+    certificateName: *.manuelvilling.de
+    stage: ${opt:stage, 'dev'}
+    createRoute53Record: true
+  # webpack:
+  #   webpackConfig: 'webpack.config.js'
+  #   includeModules: true
+  #   packager: 'npm'
