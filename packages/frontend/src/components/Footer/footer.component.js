@@ -38,10 +38,10 @@ const Gradient = styled.div`
 `
 
 const AttrLink = styled.a`
-    opacity: 0.4;
-    ${(props) => props.theme.lightFont} color: #000;
-    font-size: 10px;
-    text-decoration: none;
+	opacity: 0.4;
+	${(props) => props.theme.lightFont} color: #000;
+	font-size: 10px;
+	text-decoration: none;
 `
 
 const Footer = () => (
@@ -49,9 +49,7 @@ const Footer = () => (
 		<FooterWrap>
 			<Grid.Container>
 				<Grid.Row>
-					<AttrLink
-						href="https://www.emojione.com"
-						target="_blank">
+					<AttrLink href="https://www.emojione.com" target="_blank">
 						Emoji icons provided free by EmojiOne
 					</AttrLink>
 					<Ul>

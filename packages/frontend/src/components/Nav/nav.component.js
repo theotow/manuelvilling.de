@@ -33,7 +33,8 @@ const LiMobile = styled.li`
 `
 const StyledLink = styled(Link)`
 	${(props) => props.theme.lightFont} color: #000;
-	${(props) => `text-decoration: ${props['data-active'] ? 'underline' : 'none'};`};
+	${(props) =>
+		`text-decoration: ${props['data-active'] ? 'underline' : 'none'};`};
 	line-height: 2;
 	height: 100%;
 `
@@ -111,7 +112,9 @@ class MobileNav extends React.Component {
 	}
 }
 
-const MobileNavWithRouter = withRouter((({ location }) => <MobileNav key={location.pathname} />))
+const MobileNavWithRouter = withRouter(({ location }) => (
+	<MobileNav key={location.pathname} />
+))
 
 const mapSizeToComp = (size) => {
 	if (size === 'lg') return <DesktopNav />

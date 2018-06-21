@@ -1,4 +1,6 @@
-const wrapper = (file, name) => ({ height }) => <img src={file} height={height} alt={name} />
+const wrapper = (file, name) => ({ height }) => (
+	<img src={file} height={height} alt={name} />
+)
 
 const Header = wrapper(require('./header_logo.svg'), 'Header')
 const Github = wrapper(require('./twitter.svg'), 'Twitter')

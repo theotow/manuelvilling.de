@@ -27,9 +27,14 @@ class Mypage extends React.Component {
 		)
 		await getDataFromTree(AppInstance)
 		const initialState = getClient().extract()
-		return { requestUrl, initialState, staticContext: {}, authToken, browserSize }
+		return {
+			requestUrl,
+			initialState,
+			staticContext: {},
+			authToken,
+			browserSize
+		}
 	}
-
 
 	render() {
 		return (

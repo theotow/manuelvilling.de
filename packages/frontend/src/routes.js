@@ -1,8 +1,4 @@
-import {
-	BlogPage,
-	HomePage,
-	NoMatchPage
-} from './pages'
+import { BlogPage, HomePage, NoMatchPage } from './pages'
 import withFadeIn from './hoc/withfade.hoc'
 
 const routes = [

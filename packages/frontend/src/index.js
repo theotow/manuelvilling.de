@@ -41,7 +41,9 @@ export default class App extends React.Component {
 		return (
 			<ApolloProvider client={getClient()}>
 				<ThemeProvider theme={theme}>
-					<MediaProvider size={this.props.browserSize} loader={ResizeLoader}>
+					<MediaProvider
+						size={this.props.browserSize}
+						loader={ResizeLoader}>
 						<Router
 							location={this.props.requestUrl}
 							context={this.props.staticContext}>

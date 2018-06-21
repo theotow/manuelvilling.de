@@ -5,8 +5,8 @@ const Container = styled.div`
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
-    max-width: 1170px;
-    box-sizing: border-box;
+	max-width: 1170px;
+	box-sizing: border-box;
 `
 const Row = styled.div``
 

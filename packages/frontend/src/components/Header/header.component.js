@@ -15,8 +15,8 @@ const HeaderWrap = styled.header`
 `
 const HeaderInner = styled.div`
 	padding: 26px 0 0 0;
-    display: flex;
-    max-height: 35px;
+	display: flex;
+	max-height: 35px;
 	justify-content: space-between;
 `
 

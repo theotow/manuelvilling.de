@@ -10,8 +10,8 @@ const BouncyDiv = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-    ${(props) => props.theme.lightFont} color: #000;
-    font-size: 14px;
+	${(props) => props.theme.lightFont} color: #000;
+	font-size: 14px;
 `
 
 const ResizeLoader = () => <BouncyDiv>Transforming</BouncyDiv>
