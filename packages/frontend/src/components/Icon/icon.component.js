@@ -3,8 +3,8 @@ const wrapper = (file, name) => ({ height }) => (
 )
 
 const Header = wrapper(require('./header_logo.svg'), 'Header')
-const Github = wrapper(require('./twitter.svg'), 'Twitter')
-const Twitter = wrapper(require('./github.svg'), 'Github')
+const Github = wrapper(require('./github.svg'), 'Github')
+const Twitter = wrapper(require('./twitter.svg'), 'Twitter')
 const Burger = wrapper(require('./burger.svg'), 'Burger')
 const ThumbsUp = wrapper(require('./1f44d.png'), 'Thumbs Up')
 const ThumbsDown = wrapper(require('./1f44e.png'), 'Thumbs Down')
