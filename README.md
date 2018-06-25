@@ -23,3 +23,17 @@ This will be the repo where i will host my new portfolio page, i just released t
 [x] slick design
 
 [ ] tests with jest and testcafe
+
+[ ] avoid lambada cold starts - pinging lambada via cron
+
+[ ] use cloudfront to host assets
+
+[ ] use api.manuelvilling.de url
+
+[ ] reduce bundle size
+
+[ ] gzip
+
+[ ] reduce lamda size to 128 for both
+
+[ ] add loading for poking
