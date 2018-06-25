@@ -4,7 +4,7 @@ provider:
   name: aws
   runtime: nodejs8.10
   region: us-west-2
-  memorySize: 512
+  memorySize: 128
   timeout: 6
   versionFunctions: false
 
@@ -39,7 +39,7 @@ custom:
   customDomain:
     domainName: ${self:custom.domainName.${opt:stage, 'dev'}}
     basePath: ''
-    certificateName: *.manuelvilling.de
+    certificateName: '*.manuelvilling.de'
     stage: ${opt:stage, 'dev'}
     createRoute53Record: true
   # webpack:
