@@ -5,6 +5,7 @@ import Icon from '../../components/Icon/icon.component'
 import Heart from '../../components/Heart/heart.component'
 import { Mutation } from 'react-apollo'
 import { POKE } from '../../queries/poke.mutation'
+import Loader from '../../components/Loader/loader.component'
 
 const Button = styled.button`
 	${(props) => props.theme.boldFont} color: #000;
@@ -72,16 +73,19 @@ class PokeButton extends React.Component {
 								this.changeScence(1)()
 							}, 1000)
 						}}>
-						{(mutate) => (
-							<ButtonBox>
-								{iconLinkFactory(mutate, Icon.ThumbsUp, 'up')}
-								{iconLinkFactory(
-									mutate,
-									Icon.ThumbsDown,
-									'down'
-								)}
-							</ButtonBox>
-						)}
+						{(mutate, { loading}) => {
+							return (<ButtonBox>
+								{loading && <Loader />}
+								{!loading && <React.Fragment>
+									{iconLinkFactory(mutate, Icon.ThumbsUp, 'up')}
+									{iconLinkFactory(
+										mutate,
+										Icon.ThumbsDown,
+										'down'
+									)}
+								</React.Fragment>}
+							</ButtonBox>)
+						}}
 					</Mutation>
 				)
 			}
