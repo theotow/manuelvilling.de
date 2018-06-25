@@ -4,7 +4,7 @@ provider:
   name: aws
   runtime: nodejs8.10
   region: us-west-2
-  memorySize: 128
+  memorySize: 256
   timeout: 6
   versionFunctions: false
 
@@ -23,6 +23,7 @@ functions:
     environment:
       NODE_ENV: production
     events:
+      - schedule: rate(5 minutes)
       - http: ANY /
       - http: 'ANY {proxy+}'
     package:

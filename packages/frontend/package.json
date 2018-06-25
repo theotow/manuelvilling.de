@@ -7,26 +7,36 @@
 		"postinstall": "./node_modules/.bin/next build",
 		"start": "./node_modules/.bin/next dev",
 		"start-ssr": "node index.js",
-		"deploy":
-			"../../node_modules/.bin/lerna bootstrap --scope @local/frontend --scope @local/shared && npm run build && ./node_modules/.bin/serverless deploy",
+		"deploy": "../../node_modules/.bin/lerna bootstrap --scope @local/frontend --scope @local/shared && npm run build && ./node_modules/.bin/serverless deploy",
 		"deploy-prod": "npm run deploy -- --stage prod",
 		"build": "./node_modules/.bin/next build",
 		"build-start": "NODE_ENV=production node index.js",
 		"lint": "./node_modules/.bin/eslint ./**/*.js",
 		"pretty": "./node_modules/.bin/lint-staged",
 		"test": "NODE_ENV=test ./node_modules/.bin/jest",
-		"test-in":
-			"./node_modules/.bin/testcafe --debug-on-fail --concurrency 1 --screenshots ./tests/screens chrome tests/**.js",
+		"test-in": "./node_modules/.bin/testcafe --debug-on-fail --concurrency 1 --screenshots ./tests/screens chrome tests/**.js",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
 	"jest": {
-		"setupFiles": ["<rootDir>/jest.setup.js"],
+		"setupFiles": [
+			"<rootDir>/jest.setup.js"
+		],
 		"transform": {
 			"^.+\\.js?$": "babel-jest"
 		},
-		"testPathIgnorePatterns": ["/.next/", "/node_modules/"],
-		"moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+		"testPathIgnorePatterns": [
+			"/.next/",
+			"/node_modules/"
+		],
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		],
 		"coveragePathIgnorePatterns": [
 			"/node_modules/",
 			"/.next/",
@@ -34,7 +44,9 @@
 		]
 	},
 	"lint-staged": {
-		"*.{js,json,css,md}": ["prettier --write"]
+		"*.{js,json,css,md}": [
+			"prettier --write"
+		]
 	},
 	"author": "",
 	"license": "ISC",
