@@ -31,7 +31,7 @@ export default class App extends React.Component {
 		setClient(
 			props.initialState,
 			() => getToken(props.authToken),
-			'https://dcnq6aca9i.execute-api.us-west-2.amazonaws.com/dev/graphql'
+			'https://api.manuelvilling.de/graphql'
 		)
 	}
 

@@ -34,6 +34,6 @@ This will be the repo where i will host my new portfolio page, i just released t
 
 [ ] gzip
 
-[ ] reduce lamda size to 128 for both
+[x] reduce lamda size to 128 for both
 
 [x] add loading for poking

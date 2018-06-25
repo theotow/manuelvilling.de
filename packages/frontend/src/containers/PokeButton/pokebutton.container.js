@@ -73,18 +73,26 @@ class PokeButton extends React.Component {
 								this.changeScence(1)()
 							}, 1000)
 						}}>
-						{(mutate, { loading}) => {
-							return (<ButtonBox>
-								{loading && <Loader />}
-								{!loading && <React.Fragment>
-									{iconLinkFactory(mutate, Icon.ThumbsUp, 'up')}
-									{iconLinkFactory(
-										mutate,
-										Icon.ThumbsDown,
-										'down'
+						{(mutate, { loading }) => {
+							return (
+								<ButtonBox>
+									{loading && <Loader />}
+									{!loading && (
+										<React.Fragment>
+											{iconLinkFactory(
+												mutate,
+												Icon.ThumbsUp,
+												'up'
+											)}
+											{iconLinkFactory(
+												mutate,
+												Icon.ThumbsDown,
+												'down'
+											)}
+										</React.Fragment>
 									)}
-								</React.Fragment>}
-							</ButtonBox>)
+								</ButtonBox>
+							)
 						}}
 					</Mutation>
 				)
