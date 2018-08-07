@@ -1,8 +1,10 @@
 import RouterInfo from '../../containers/RouterInfo/routerinfo.container'
 import AppWrapper from '../../components/AppWrapper/appwrapper.component'
-import { injectGlobal } from 'styled-components'
+import { injectGlobal, ThemeProvider } from 'styled-components'
 import FontLight from '../../global/fonts/IBMPlexMono-Light.woff'
 import FontBold from '../../global/fonts/IBMPlexMono-Bold.woff'
+import ResizeLoader from '../ResizeLoader/resizeloader.component'
+import { MediaProvider } from '../../shared/media'
 
 injectGlobal`
   @font-face {
@@ -67,12 +69,27 @@ table {
 }
 `
 
-const Root = ({ children, staticContext }) => {
+const theme = {
+	lightFont: `
+		font-family: 'PlexMono';
+		font-weight: 300;
+	`,
+	boldFont: `
+		font-family: 'PlexMono';
+		font-weight: 600;
+	`
+}
+
+const Root = ({ children, staticContext, size }) => {
 	return (
-		<AppWrapper>
-			{children()}
-			<RouterInfo context={staticContext} />
-		</AppWrapper>
+		<ThemeProvider theme={theme}>
+			<MediaProvider size={size} loader={ResizeLoader}>
+				<AppWrapper>
+					{children()}
+					<RouterInfo context={staticContext} />
+				</AppWrapper>
+			</MediaProvider>
+		</ThemeProvider>
 	)
 }
 export default Root
