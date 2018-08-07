@@ -29,6 +29,7 @@ function iconLinkFactory(clickFunc, Component, msg) {
 	return (
 		<a
 			href="#"
+			data-value={msg}
 			onClick={() =>
 				clickFunc({
 					variables: { msg }

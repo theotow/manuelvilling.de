@@ -12,6 +12,7 @@ import Root from './components/Root/root.component'
 import ResizeLoader from './components/ResizeLoader/resizeloader.component'
 import { ThemeProvider } from 'styled-components'
 import { MediaProvider } from './shared/media'
+import getConfig from 'next/config'
 
 const theme = {
 	lightFont: `
@@ -24,6 +25,13 @@ const theme = {
 	`
 }
 
+function getGraphUrl() {
+	const { publicRuntimeConfig } = getConfig()
+	return publicRuntimeConfig.env === 'prod'
+		? 'https://api.manuelvilling.de/graphql'
+		: 'http://localhost:3001/graphql'
+}
+
 export default class App extends React.Component {
 	constructor(props) {
 		super(props)
@@ -31,7 +39,7 @@ export default class App extends React.Component {
 		setClient(
 			props.initialState,
 			() => getToken(props.authToken),
-			'https://api.manuelvilling.de/graphql'
+			getGraphUrl()
 		)
 	}
 

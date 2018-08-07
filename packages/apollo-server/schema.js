@@ -1,5 +1,4 @@
 const rp = require('request-promise')
-const { makeExecutableSchema } = require('graphql-tools')
 const TelegramBot = require('node-telegram-bot-api')
 
 async function getEntries() {
@@ -45,9 +44,4 @@ const resolvers = {
 	}
 }
 
-const schema = makeExecutableSchema({
-	typeDefs,
-	resolvers
-})
-
-module.exports = schema
+module.exports = { resolvers, typeDefs }

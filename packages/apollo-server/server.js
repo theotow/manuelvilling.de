@@ -2,28 +2,50 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express')
 const cors = require('cors')
-const schema = require('./schema')
+const { typeDefs, resolvers } = require('./schema')
+const {
+	makeExecutableSchema,
+	addMockFunctionsToSchema
+} = require('graphql-tools')
+const mocks = require('./mocks')
 
-const app = express()
+function buildApp(isTest) {
+	const app = express()
 
-app.use(
-	'/graphql',
-	cors(),
-	bodyParser.json(),
-	graphqlExpress(() => ({
-		schema,
-		context: {}
-	}))
-)
+	const schema = isTest
+		? makeExecutableSchema({
+			typeDefs
+		  })
+		: makeExecutableSchema({ typeDefs, resolvers })
 
-app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
+	if (isTest) {
+		addMockFunctionsToSchema({
+			schema,
+			mocks
+		})
+	}
 
-const startApp = async port => {
+	app.use(
+		'/graphql',
+		cors(),
+		bodyParser.json(),
+		graphqlExpress(() => ({
+			schema,
+			context: {}
+		}))
+	)
+
+	app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
+
+	return app
+}
+
+const startApp = async (port, isTest) => {
 	return new Promise(resolve => {
-		app.listen(port, () => {
+		buildApp(isTest).listen(port, () => {
 			resolve()
 		})
 	})
 }
 
-module.exports = { app, startApp }
+module.exports = { startApp }
