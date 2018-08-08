@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 import Icon from '../Icon/icon.component'
 import Grid from '../Grid/grid.component'
-import Nav from '../Nav/nav.component'
+import DesktopNav from '../DesktopNav/desktopnav.component'
+import MobileNav from '../../containers/MobileNav/mobilenav.container'
 import { Link } from 'react-router-dom'
+import { GetMedia } from '../../shared/media'
 
 const HeaderWrap = styled.header`
 	position: fixed;
@@ -20,6 +22,11 @@ const HeaderInner = styled.div`
 	justify-content: space-between;
 `
 
+const mapSizeToComp = (size) => {
+	if (size === 'lg') return <DesktopNav />
+	return <MobileNav />
+}
+
 const Header = () => (
 	<HeaderWrap>
 		<Grid.Container>
@@ -28,7 +35,7 @@ const Header = () => (
 					<Link to="/">
 						<Icon.Header />
 					</Link>
-					<Nav />
+					<GetMedia>{mapSizeToComp}</GetMedia>
 				</HeaderInner>
 			</Grid.Row>
 		</Grid.Container>

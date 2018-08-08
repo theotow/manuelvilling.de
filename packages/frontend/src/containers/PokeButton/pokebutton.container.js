@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Icon from '../../components/Icon/icon.component'
@@ -6,24 +5,7 @@ import Heart from '../../components/Heart/heart.component'
 import { Mutation } from 'react-apollo'
 import { POKE } from '../../queries/poke.mutation'
 import Loader from '../../components/Loader/loader.component'
-
-const Button = styled.button`
-	${(props) => props.theme.boldFont} color: #000;
-	background: #f1ff1e;
-	font-size: 16px;
-	text-align: center;
-	border: 0;
-	cursor: pointer;
-	height: 40px;
-	min-width: 260px;
-`
-const ButtonBox = Button.withComponent('div').extend`
-    max-width: 260px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: inherit;
-`
+import Button from '../../components/Button/button.component'
 
 function iconLinkFactory(clickFunc, Component, msg) {
 	return (
@@ -76,7 +58,7 @@ class PokeButton extends React.Component {
 						}}>
 						{(mutate, { loading }) => {
 							return (
-								<ButtonBox>
+								<Button isBox>
 									{loading && <Loader />}
 									{!loading && (
 										<React.Fragment>
@@ -92,7 +74,7 @@ class PokeButton extends React.Component {
 											)}
 										</React.Fragment>
 									)}
-								</ButtonBox>
+								</Button>
 							)
 						}}
 					</Mutation>

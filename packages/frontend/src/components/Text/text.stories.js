@@ -14,3 +14,31 @@ storiesOf('Text', module)
 			<Root>{() => <Text.P>Paragraph</Text.P>}</Root>
 		</StaticRouter>
 	))
+	.add('ActiveStyledLink', () => (
+		<StaticRouter location="/" context={{}}>
+			<Root>
+				{() => (
+					<div>
+						<Text.ActiveStyledLink to="/page">
+							Paragraph
+						</Text.ActiveStyledLink>
+						text
+					</div>
+				)}
+			</Root>
+		</StaticRouter>
+	))
+	.add('ActiveStyledLinkMobile', () => (
+		<StaticRouter location="/" context={{}}>
+			<Root>
+				{() => (
+					<div>
+						<Text.ActiveStyledLinkMobile to="/page">
+							Paragraph
+						</Text.ActiveStyledLinkMobile>
+						text
+					</div>
+				)}
+			</Root>
+		</StaticRouter>
+	))
