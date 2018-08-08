@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "source ./secrets && node index.js",
     "deploy": "source ./secrets && npm i && ./node_modules/.bin/serverless deploy"
   },

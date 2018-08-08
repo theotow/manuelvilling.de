@@ -5,7 +5,6 @@
   "main": "build.js",
   "module": "build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "./node_modules/.bin/babel index.js --out-file build.js",
     "lint": "./node_modules/.bin/eslint ./*"
   },

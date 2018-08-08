@@ -21,6 +21,9 @@
 		"build-storybook": "build-storybook"
 	},
 	"jest": {
+		"moduleNameMapper": {
+			"\\.(svg|png|woff)$": "<rootDir>/tests/__mocks__/empty-module.js"
+		},
 		"setupFiles": ["<rootDir>/jest.setup.js"],
 		"transform": {
 			"^.+\\.js?$": "babel-jest"
@@ -82,8 +85,8 @@
 		"babel-plugin-styled-components": "^1.5.1",
 		"babel-runtime": "^6.26.0",
 		"copy-webpack-plugin": "^4.5.1",
-		"enzyme": "^3.3.0",
-		"enzyme-adapter-react-16": "^1.1.1",
+		"enzyme": "^3.4.0",
+		"enzyme-adapter-react-16": "^1.2.0",
 		"eslint": "^4.19.1",
 		"eslint-plugin-jest": "^21.15.2",
 		"eslint-plugin-react": "^7.8.2",

@@ -11,10 +11,11 @@ import routes from './routes'
 import Root from './components/Root/root.component'
 import getConfig from 'next/config'
 import AppWrapper from './components/AppWrapper/appwrapper.component'
+import { get } from 'lodash'
 
 function getGraphUrl() {
-	const { publicRuntimeConfig } = getConfig()
-	return publicRuntimeConfig.env === 'prod'
+	const env = get(getConfig(), ['publicRuntimeConfig', 'env'])
+	return env === 'prod'
 		? 'https://api.manuelvilling.de/graphql'
 		: 'http://localhost:3001/graphql'
 }
