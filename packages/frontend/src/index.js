@@ -10,6 +10,7 @@ import { getToken } from './shared/index'
 import routes from './routes'
 import Root from './components/Root/root.component'
 import getConfig from 'next/config'
+import AppWrapper from './components/AppWrapper/appwrapper.component'
 
 function getGraphUrl() {
 	const { publicRuntimeConfig } = getConfig()
@@ -40,7 +41,7 @@ export default class App extends React.Component {
 					<Root
 						staticContext={this.props.staticContext}
 						size={this.props.browserSize}>
-						{() => renderRoutes(routes)}
+						{() => <AppWrapper>{renderRoutes(routes)}</AppWrapper>}
 					</Root>
 				</Router>
 			</ApolloProvider>

@@ -1,10 +1,10 @@
 import { storiesOf } from '@storybook/react'
-import AppWrapper from './appwrapper.component'
 import { StaticRouter } from 'react-router-dom'
 import Root from '../Root/root.component'
+import Header from './header.component'
 
-storiesOf('AppWrapper', module).add('default', () => (
+storiesOf('Header', module).add('default', () => (
 	<StaticRouter location="/" context={{}}>
-		<Root>{() => <AppWrapper>content</AppWrapper>}</Root>
+		<Root>{() => <Header />}</Root>
 	</StaticRouter>
 ))

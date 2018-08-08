@@ -1,5 +1,4 @@
 import RouterInfo from '../../containers/RouterInfo/routerinfo.container'
-import AppWrapper from '../../components/AppWrapper/appwrapper.component'
 import { injectGlobal, ThemeProvider } from 'styled-components'
 import FontLight from '../../global/fonts/IBMPlexMono-Light.woff'
 import FontBold from '../../global/fonts/IBMPlexMono-Bold.woff'
@@ -84,10 +83,8 @@ const Root = ({ children, staticContext, size }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<MediaProvider size={size} loader={ResizeLoader}>
-				<AppWrapper>
-					{children()}
-					<RouterInfo context={staticContext} />
-				</AppWrapper>
+				{children()}
+				<RouterInfo context={staticContext} />
 			</MediaProvider>
 		</ThemeProvider>
 	)
