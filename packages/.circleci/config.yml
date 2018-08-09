@@ -18,6 +18,8 @@ jobs:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
 
+      - run: npm i -g nvm
+      - run: nvm install 9.9.0
       - run: yarn install
 
       - save_cache:
