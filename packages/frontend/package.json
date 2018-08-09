@@ -21,6 +21,7 @@
 		"build-storybook": "build-storybook"
 	},
 	"jest": {
+		"testURL": "http://localhost/",
 		"moduleNameMapper": {
 			"\\.(svg|png|woff)$": "<rootDir>/tests/__mocks__/empty-module.js"
 		},
