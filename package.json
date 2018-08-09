@@ -10,7 +10,8 @@
     "reset": "npm run clean && npm run install",
     "pretty-all": "./node_modules/.bin/lerna run pretty --stream --parallel",
     "lint-all": "./node_modules/.bin/lerna run lint --stream --parallel",
-    "precommit": "npm run pretty-all && npm run lint-all"
+    "precommit": "npm run pretty-all && npm run lint-all",
+    "test": "./node_modules/.bin/lerna run test"
   },
   "author": "",
   "license": "ISC",
