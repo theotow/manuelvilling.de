@@ -11,7 +11,9 @@
     "pretty-all": "./node_modules/.bin/lerna run pretty --stream --parallel",
     "lint-all": "./node_modules/.bin/lerna run lint --stream --parallel",
     "precommit": "npm run pretty-all && npm run lint-all",
-    "test": "./node_modules/.bin/lerna run test"
+    "test": "./node_modules/.bin/lerna run test",
+    "lint": "./node_modules/.bin/lerna run lint",
+    "test-in": "./node_modules/.bin/lerna run test-in"
   },
   "author": "",
   "license": "ISC",
