@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "source ./secrets && node index.js",
-    "deploy": "source ./secrets && npm i && ./node_modules/.bin/serverless deploy"
+    "deploy": "source ./secrets && npm i && ./node_modules/.bin/serverless deploy",
+    "lint": "./node_modules/.bin/eslint ./**/*.js"
   },
   "author": "",
   "license": "ISC",

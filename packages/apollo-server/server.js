@@ -15,7 +15,7 @@ function buildApp(isTest) {
 	const schema = isTest
 		? makeExecutableSchema({
 			typeDefs
-		  })
+		})
 		: makeExecutableSchema({ typeDefs, resolvers })
 
 	if (isTest) {
