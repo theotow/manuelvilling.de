@@ -1,6 +1,10 @@
 const isProd = process.env.NODE_ENV === 'production'
+const prodUrl = process.env.ASSET_URL != undefined
+	? process.env.ASSET_URL
+	: 'https://assets.manuelvilling.de'
+	console.log(process.env)
 module.exports = {
-	assetPrefix: isProd ? 'https://assets.manuelvilling.de' : '',
+	assetPrefix: isProd ? prodUrl : '',
 	publicRuntimeConfig: {
 		env: process.env.NODE_ENV
 	},
