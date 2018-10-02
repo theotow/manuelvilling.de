@@ -1,12 +1,6 @@
 import React from 'react'
 import { withRouter } from 'next/router'
-import {
-	getParsedCookie,
-	getDataFromTree,
-	getClient,
-	COOKIE_NAME,
-	getBrowserSize
-} from '@local/shared'
+import { getDataFromTree, getClient, getBrowserSize } from '@local/shared'
 import App from '../src/index'
 
 class Mypage extends React.Component {
@@ -17,11 +11,10 @@ class Mypage extends React.Component {
 		}
 		const requestUrl = req.url
 		const browserSize = getBrowserSize(req.headers['user-agent'])
-		const authToken = getParsedCookie(COOKIE_NAME, req.headers.cookie)
 		const AppInstance = (
 			<App
 				requestUrl={requestUrl}
-				authToken={authToken}
+				authToken=""
 				browserSize={browserSize}
 			/>
 		)
@@ -31,7 +24,7 @@ class Mypage extends React.Component {
 			requestUrl,
 			initialState,
 			staticContext: {},
-			authToken,
+			authToken: '',
 			browserSize
 		}
 	}

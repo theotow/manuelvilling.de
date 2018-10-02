@@ -11,22 +11,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-cache-inmemory": "^1.2.1",
-    "apollo-client": "^2.3.1",
-    "apollo-link": "^1.2.2",
-    "apollo-link-batch-http": "^1.2.2",
-    "apollo-link-state": "^0.4.1",
-    "graphql": "^0.13.2",
+    "apollo-cache-inmemory": "^1.2.10",
+    "apollo-client": "^2.4.2",
+    "apollo-link": "^1.2.3",
+    "apollo-link-batch-http": "^1.2.3",
     "js-cookie": "^2.2.0",
-    "mobile-detect": "^1.4.1",
-    "react": "^16.3.2",
-    "react-apollo": "^2.1.4",
-    "react-dom": "^16.3.2"
+    "mobile-detect": "^1.4.3",
+    "react-apollo": "^2.2.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "eslint": "^4.19.1",
-    "eslint-plugin-react": "^7.8.2"
+    "eslint-plugin-react": "^7.11.1"
   }
 }

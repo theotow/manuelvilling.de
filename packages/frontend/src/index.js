@@ -5,7 +5,6 @@ import { renderRoutes } from 'react-router-config'
 import { ApolloProvider } from 'react-apollo'
 
 import { isBrowser, setClient, getClient } from '@local/shared'
-import { getToken } from './shared/index'
 
 import routes from './routes'
 import Root from './components/Root/root.component'
@@ -24,11 +23,7 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props)
 		if (this.props.browserOnly && !isBrowser()) return
-		setClient(
-			props.initialState,
-			() => getToken(props.authToken),
-			getGraphUrl()
-		)
+		setClient(props.initialState, () => '', getGraphUrl())
 	}
 
 	render() {
