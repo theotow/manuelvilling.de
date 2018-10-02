@@ -2,7 +2,6 @@
 	"name": "@local/frontend",
 	"version": "1.0.0",
 	"description": "",
-	"main": ".next/dist/bundles/pages/server.js",
 	"scripts": {
 		"postinstall": "./node_modules/.bin/next build",
 		"start": "./node_modules/.bin/next dev",
@@ -62,7 +61,7 @@
 		"express": "^4.16.3",
 		"graphql": "^0.13.2",
 		"graphql-tag": "^2.9.2",
-		"next": "theotow/next.js#with-serverless-support",
+		"next": "theotow/next.js#with-serverless-support-7",
 		"node-fetch": "^2.2.0",
 		"ramda": "^0.25.0",
 		"react": "^16.5.2",
@@ -98,9 +97,8 @@
 		"react-test-renderer": "^16.5.2",
 		"serverless": "^1.32.0",
 		"serverless-domain-manager": "^2.6.5",
-		"serverless-webpack": "^5.2.0",
 		"testcafe": "^0.20.5",
 		"testcafe-react-selectors": "^2.1.0",
-		"webpack-node-externals": "^1.7.2"
+		"url-loader": "^1.1.1"
 	}
 }

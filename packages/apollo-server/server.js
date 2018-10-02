@@ -42,8 +42,9 @@ function buildApp(isTest) {
 
 const startApp = async (port, isTest) => {
 	return new Promise(resolve => {
-		buildApp(isTest).listen(port, () => {
-			resolve()
+		const app = buildApp(isTest)
+		const instance = app.listen(port, () => {
+			resolve(instance)
 		})
 	})
 }

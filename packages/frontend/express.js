@@ -45,7 +45,7 @@ server.get('*', (req, res) => {
 
 function serverFactory(attachHooks) {
 	if (attachHooks) {
-		app.hookEssentialRoutes()
+		app.defineRoutesSync()
 	}
 	return { server, app }
 }

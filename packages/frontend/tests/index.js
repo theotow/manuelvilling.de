@@ -2,24 +2,29 @@ import next from 'next'
 import path from 'path'
 import MainPage from './pages/main'
 import BlogPage from './pages/blog'
+import http from 'http'
 import { startApp } from '../../apollo-server/server'
 import { ClientFunction, RequestLogger } from 'testcafe'
 
 const basePath = 'http://127.0.0.1:3000'
 
-let s
-async function startNext() {
-	s = next({
+async function startNext(t) {
+	const app = next({
 		dir: path.resolve(__dirname, '..'),
-		dev: true,
-		staticMarkup: false,
-		quiet: true,
-		conf: null
+		dev: true
 	})
-	await s.start(3000, '127.0.0.1')
+	await app.prepare()
+	t.ctx.next = http.createServer(app.getRequestHandler())
+	await new Promise((resolve, reject) => {
+		t.ctx.next.on('error', reject)
+		t.ctx.next.on('listening', () => resolve())
+		t.ctx.next.listen(3000, '127.0.0.1')
+	})
 }
-async function stopNext() {
-	await s.close()
+async function stopNext(t) {
+	await new Promise((resolve) => t.ctx.next.close(resolve))
+	await new Promise((resolve) => t.ctx.apollo.close(resolve))
+	await new Promise((resolve) => setTimeout(resolve, 4000))
 }
 
 const getLocation = ClientFunction(() => document.location.href)
@@ -29,9 +34,11 @@ const logger = RequestLogger(undefined, {
 	logResponseBody: true
 })
 
-fixture`Getting Started`.page`http://127.0.0.1:3000`
-	.before(async () => {
-		await Promise.all([startNext(), startApp(3001, true)])
+fixture`Without SSR`.page`http://127.0.0.1:3000`
+	.before(async (t) => {
+		t.ctx = {}
+		const res = await Promise.all([startNext(t), startApp(3001, true)])
+		t.ctx.apollo = res[1]
 	})
 	.after(stopNext)
 	.requestHooks(logger)

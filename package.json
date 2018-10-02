@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "./node_modules/.bin/lerna bootstrap --hoist",
+    "install": "./node_modules/.bin/lerna bootstrap",
     "clean": "./node_modules/.bin/lerna clean --yes",
     "start-graphql": "./node_modules/.bin/lerna --scope @local/apollo-server run start --stream",
     "reset": "npm run clean && npm run install",

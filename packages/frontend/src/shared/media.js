@@ -35,6 +35,7 @@ export class MediaProvider extends React.Component {
 		this.state = { size: this.props.size || DEFAULT }
 	}
 	componentDidMount() {
+		if (!window.on) return
 		this.subscription = fromEvent(window, 'resize')
 			.pipe(
 				startWith({

@@ -1,25 +1,26 @@
 process.env.NODE_ENV = 'production'
-process.env.ASSET_URL = '';
+process.env.ASSET_URL = ''
 import { resolve } from 'path'
 import MainPage from './pages/main'
 import BlogPage from './pages/blog'
 import { startApp } from '../../apollo-server/server'
 import { ClientFunction, RequestLogger } from 'testcafe'
-const severFactory = require('../express')
-const { server } = severFactory(true)
-const build = require('next/dist/server/build').default
+const build = require('next/dist/build').default
 
 const basePath = 'http://127.0.0.1:3000'
 
-let s
-async function startNext() {
-	await build(resolve('.'))
+async function startNext(t) {
+	await build(resolve(__dirname, '..'))
+	const severFactory = require('../express')
+	const { server } = severFactory(true)
 	await new Promise((resolve) => {
-		s = server.listen(3000, resolve)
+		t.ctx.next = server.listen(3000, resolve)
 	})
 }
-async function stopNext() {
-	await s.close()
+async function stopNext(t) {
+	await new Promise((resolve) => t.ctx.next.close(resolve))
+    await new Promise((resolve) => t.ctx.apollo.close(resolve))
+    await new Promise((resolve) => setTimeout(resolve, 4000))
 }
 
 const getLocation = ClientFunction(() => document.location.href)
@@ -29,9 +30,11 @@ const logger = RequestLogger(undefined, {
 	logResponseBody: true
 })
 
-fixture`Getting Started`.page`http://127.0.0.1:3000`
-	.before(async () => {
-		await Promise.all([startNext(), startApp(3001, true)])
+fixture`With SSR`.page`http://127.0.0.1:3000`
+	.before(async (t) => {
+		t.ctx = {}
+		const res = await Promise.all([startNext(t), startApp(3001, true)])
+		t.ctx.apollo = res[1]
 	})
 	.after(stopNext)
 	.requestHooks(logger)
