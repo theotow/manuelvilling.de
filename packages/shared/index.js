@@ -1,4 +1,3 @@
-import { getDataFromTree } from 'react-apollo'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { BatchHttpLink } from 'apollo-link-batch-http'
 import { ApolloLink, concat } from 'apollo-link'
@@ -42,8 +41,6 @@ export function getClient() {
 export function isBrowser() {
 	return typeof window === 'object'
 }
-
-export { getDataFromTree }
 
 export function getParsedCookie(name, cookievalue) {
 	if (!isBrowser()) {

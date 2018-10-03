@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
+  "workspaces": ["packages/*"],
   "scripts": {
     "install": "./node_modules/.bin/lerna bootstrap",
     "clean": "./node_modules/.bin/lerna clean --yes",
