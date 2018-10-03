@@ -19,8 +19,8 @@ async function startNext(t) {
 }
 async function stopNext(t) {
 	await new Promise((resolve) => t.ctx.next.close(resolve))
-    await new Promise((resolve) => t.ctx.apollo.close(resolve))
-    await new Promise((resolve) => setTimeout(resolve, 4000))
+	await new Promise((resolve) => t.ctx.apollo.close(resolve))
+	await new Promise((resolve) => setTimeout(resolve, 4000))
 }
 
 const getLocation = ClientFunction(() => document.location.href)
