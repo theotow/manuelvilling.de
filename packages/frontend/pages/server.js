@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'next/router'
 import { getClient, getBrowserSize } from '@local/shared'
-import { getDataFromTree } from 'react-apollo';
+import { getDataFromTree } from 'react-apollo'
 import App from '../src/index'
 
 class Mypage extends React.Component {
