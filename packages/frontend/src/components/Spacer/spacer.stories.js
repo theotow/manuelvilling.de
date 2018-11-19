@@ -9,7 +9,8 @@ storiesOf('Spacer', module)
 			<Root>
 				{() => (
 					<div>
-						<Spacer isV size="40px" />text
+						<Spacer isV size="40px" />
+						text
 					</div>
 				)}
 			</Root>
@@ -20,7 +21,8 @@ storiesOf('Spacer', module)
 			<Root>
 				{() => (
 					<div style={{ display: 'flex' }}>
-						<Spacer isH size="40px" />text
+						<Spacer isH size="40px" />
+						text
 					</div>
 				)}
 			</Root>

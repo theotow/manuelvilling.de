@@ -1,3 +1,8 @@
 package.json
 package-lock.json
 tests
+node_modules/**
+.cache
+.next
+.serverless
+.storybook

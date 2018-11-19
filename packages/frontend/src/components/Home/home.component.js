@@ -19,7 +19,9 @@ const Home = () => (
 				I focus on design focused webapps using component based layouts
 				(react) in javascript.
 			</Text.P>
-			<Text.P maxWidth="520px">I also like golang, kotlin, rust and devops.</Text.P>
+			<Text.P maxWidth="520px">
+				I also like golang, kotlin, rust and devops.
+			</Text.P>
 			<Text.P maxWidth="520px">
 				Currently learning about graph dbs.
 			</Text.P>
