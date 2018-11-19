@@ -1,11 +1,11 @@
 import RouterInfo from '../../containers/RouterInfo/routerinfo.container'
-import { injectGlobal, ThemeProvider } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import FontLight from '../../global/fonts/IBMPlexMono-Light.woff'
 import FontBold from '../../global/fonts/IBMPlexMono-Bold.woff'
 import ResizeLoader from '../ResizeLoader/resizeloader.component'
 import { MediaProvider } from '../../shared/media'
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'PlexMono';
     src: url('${FontLight}') format('woff');
@@ -84,6 +84,7 @@ const Root = ({ children, staticContext, size }) => {
 		<ThemeProvider theme={theme}>
 			<MediaProvider size={size} loader={ResizeLoader}>
 				{children()}
+				<GlobalStyle />
 				<RouterInfo context={staticContext} />
 			</MediaProvider>
 		</ThemeProvider>

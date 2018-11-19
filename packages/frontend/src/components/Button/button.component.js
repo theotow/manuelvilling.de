@@ -10,7 +10,7 @@ const Button = styled.button`
 	height: 40px;
 	min-width: 260px;
 `
-const ButtonBox = Button.withComponent('div').extend`
+const ButtonBox = styled(Button.withComponent('div'))`
     max-width: 260px;
     display: flex;
     justify-content: center;

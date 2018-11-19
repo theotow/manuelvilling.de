@@ -61,7 +61,7 @@
 		"apollo-client": "^2.4.6",
 		"aws-serverless-express": "^3.3.5",
 		"express": "^4.16.4",
-		"graphql": "^0.13.2",
+		"graphql": "^14.0.2",
 		"graphql-tag": "^2.9.2",
 		"next": "theotow/next.js#with-serverless-support-7",
 		"node-fetch": "^2.3.0",
@@ -71,11 +71,11 @@
 		"react-apollo": "^2.3.1",
 		"react-dom": "^16.6.3",
 		"react-router": "^4.3.1",
-		"react-router-config": "^1.0.0-beta.4",
+		"react-router-config": "^4.4.0-beta.6",
 		"react-router-dom": "^4.3.1",
 		"rxjs": "^6.3.3",
 		"rxjs-compat": "^6.3.3",
-		"styled-components": "^3.4.9"
+		"styled-components": "^4.1.1"
 	},
 	"devDependencies": {
 		"@storybook/addon-actions": "^4.0.7",
@@ -96,10 +96,10 @@
 		"jest": "^23.6.0",
 		"lint-staged": "^8.0.5",
 		"prettier": "^1.15.2",
-		"serverless": "^1.32.0",
-		"serverless-domain-manager": "^2.6.5",
-		"testcafe": "^0.20.5",
-		"testcafe-react-selectors": "^2.1.0",
+		"serverless": "^1.33.1",
+		"serverless-domain-manager": "^2.6.6",
+		"testcafe": "^0.23.2",
+		"testcafe-react-selectors": "^3.0.0",
 		"url-loader": "^1.1.2"
 	}
 }
