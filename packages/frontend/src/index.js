@@ -14,7 +14,7 @@ import { get } from 'lodash'
 
 function getGraphUrl() {
 	const env = get(getConfig(), ['publicRuntimeConfig', 'env'])
-	return env === 'prod'
+	return env === 'production'
 		? 'https://api.manuelvilling.de/graphql'
 		: 'http://localhost:3001/graphql'
 }

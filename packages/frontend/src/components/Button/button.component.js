@@ -11,11 +11,11 @@ const Button = styled.button`
 	min-width: 260px;
 `
 const ButtonBox = styled(Button.withComponent('div'))`
-    max-width: 260px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: inherit;
+	max-width: 260px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: inherit;
 `
 
 const ButtonMain = ({ isBox, ...more }) => {
