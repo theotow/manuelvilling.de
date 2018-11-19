@@ -19,13 +19,12 @@ const Home = () => (
 				I focus on design focused webapps using component based layouts
 				(react) in javascript.
 			</Text.P>
-			<Text.P maxWidth="520px">I also like golang, kotlin and FP.</Text.P>
+			<Text.P maxWidth="520px">I also like golang, kotlin, rust and devops.</Text.P>
 			<Text.P maxWidth="520px">
-				Currently learning reactive programming.
+				Currently learning about graph dbs.
 			</Text.P>
 			<Text.P maxWidth="520px">
-				In my freetime i write tutorials for my blog around scaling,
-				deployment, dapps.
+				Im also AWS Certified Solution Architect.
 			</Text.P>
 			<Spacer isV size="20px" />
 			<PokeButton />
