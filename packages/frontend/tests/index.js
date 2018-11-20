@@ -21,10 +21,8 @@ async function startNext(t) {
 		t.ctx.next.listen(3000, '127.0.0.1')
 	})
 }
-async function stopNext(t) {
-	await new Promise((resolve) => t.ctx.next.close(resolve))
-	await new Promise((resolve) => t.ctx.apollo.close(resolve))
-	await new Promise((resolve) => setTimeout(resolve, 4000))
+async function stopNext() {
+	process.exit(0)
 }
 
 const getLocation = ClientFunction(() => document.location.href)

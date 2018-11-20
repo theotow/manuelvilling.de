@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'production'
+process.env.NODE_ENV = 'test'
 process.env.ASSET_URL = ''
 import { resolve } from 'path'
 import MainPage from './pages/main'
