@@ -60,6 +60,7 @@
 		"animated": "^0.2.2",
 		"apollo-client": "^2.4.6",
 		"aws-serverless-express": "^3.3.5",
+		"babel-core": "^7.0.0-bridge.0",
 		"express": "^4.16.4",
 		"graphql": "^14.0.2",
 		"graphql-tag": "^2.9.2",
@@ -78,12 +79,12 @@
 		"styled-components": "^4.1.1"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.1.6",
 		"@storybook/addon-actions": "^4.0.7",
 		"@storybook/addon-links": "^4.0.7",
 		"@storybook/addons": "^4.0.7",
 		"@storybook/cli": "^4.0.7",
 		"@storybook/react": "^4.0.7",
-		"babel-core": "^6.26.3",
 		"babel-eslint": "^10.0.1",
 		"babel-jest": "^23.6.0",
 		"babel-plugin-styled-components": "^1.5.1",
