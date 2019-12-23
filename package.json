@@ -1,29 +1,16 @@
 {
-  "name": "nextjs",
+  "name": "manuelvilling.de",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {
-    "install": "./node_modules/.bin/lerna bootstrap",
-    "clean": "./node_modules/.bin/lerna clean --yes",
-    "start-graphql": "./node_modules/.bin/lerna --scope @local/apollo-server run start --stream",
-    "reset": "npm run clean && npm run install",
-    "pretty-all": "./node_modules/.bin/lerna run pretty --stream --parallel",
-    "lint-all": "./node_modules/.bin/lerna run lint --stream --parallel",
-    "precommit": "npm run pretty-all && npm run lint-all",
-    "test": "./node_modules/.bin/lerna run test",
-    "lint": "./node_modules/.bin/lerna run lint",
-    "test-in": "./node_modules/.bin/lerna run test-in"
-  },
+  "scripts": {},
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "husky": "^1.1.0",
-    "lerna": "^3.4.0"
+    "now": "^16.7.0"
   }
 }

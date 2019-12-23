@@ -1,9 +1,0 @@
-{
-    "semi": false,
-    "useTabs": true,
-    "singleQuote": true,
-    "jsxBracketSameLine": true,
-    "arrowParens": "always",
-    "tabWidth": 4,
-    "parser": "babylon"
-  }
