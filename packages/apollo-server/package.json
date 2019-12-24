@@ -7,13 +7,15 @@
     "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
-    "deploy": "../../node_modules/.bin/now -A ./apollo-server.json"
+    "deploy": "../../node_modules/.bin/now -A ./apollo-server.json -b TELEGRAM_CHAT_ID=@telegram_chat_id -b TELEGRAM_TOKEN=@telegram_token",
+    "deploy-prod": "yarn deploy -- --prod"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "apollo-server-micro": "2.6.7",
     "bluebird": "^3.7.2",
+    "dotenv": "^8.2.0",
     "graphql": "^14.5.8",
     "micro-cors": "^0.1.1",
     "next": "9.1.6",

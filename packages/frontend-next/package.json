@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "deploy": "../../node_modules/.bin/now -A ./frontend-next.json",
+    "deploy-prod": "../../node_modules/.bin/now -A ./frontend-next.json --prod",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

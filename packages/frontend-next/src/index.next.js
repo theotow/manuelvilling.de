@@ -14,7 +14,9 @@ class Next extends React.Component {
 		const browserSize = getBrowserSize(req.headers['user-agent'])
 		const AppInstance = (
 			<App
-				requestUrl={requestUrl}
+                requestUrl={requestUrl}
+                initialState={{}}
+				staticContext={{}}
 				browserSize={browserSize}
 			/>
 		)
