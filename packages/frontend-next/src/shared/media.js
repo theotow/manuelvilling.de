@@ -62,7 +62,7 @@ export class MediaProvider extends React.Component {
 			this.subscription.unsubscribe()
 		}
 	}
-	componentWillUpdate(props, state) {
+	UNSAFE_componentWillUpdate(props, state) {
 		if (state.nextSize) {
 			setTimeout(() => {
 				this.setState({ size: state.nextSize, nextSize: undefined })

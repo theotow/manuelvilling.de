@@ -50,14 +50,14 @@ const resolvers = {
 const apolloServer = new ApolloServer({ typeDefs, resolvers })
 
 export const config = {
-  api: {
-    bodyParser: false,
-  },
+	api: {
+		bodyParser: false,
+	},
 }
 export default cors((req, res) => {
 	if (req.method === 'OPTIONS') {
-	  res.end()
-	  return
+		res.end()
+		return
 	}
 	return apolloServer.createHandler({ path: '/api/graphql' })(req, res)
-  })
+})
