@@ -1,3 +1,4 @@
+import React from 'react'
 import Grid from '../Grid/grid.component'
 import Spacer from '../Spacer/spacer.component'
 import Text from '../Text/text.component'

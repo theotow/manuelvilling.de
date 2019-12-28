@@ -2,6 +2,7 @@ import React from 'react'
 import { fromEvent } from 'rxjs'
 import { tap, map, startWith, debounce } from 'rxjs/operators'
 import { timer } from 'rxjs/observable/timer'
+import { isBrowser } from '../apollo'
 
 const DEFAULT = 'lg'
 const MediaContext = React.createContext({ size: DEFAULT })
@@ -35,6 +36,7 @@ export class MediaProvider extends React.Component {
 		this.state = { size: this.props.size || DEFAULT }
 	}
 	componentDidMount() {
+		if (!isBrowser()) return
 		this.subscription = fromEvent(window, 'resize')
 			.pipe(
 				startWith({
@@ -50,6 +52,7 @@ export class MediaProvider extends React.Component {
 			)
 			.subscribe()
 	}
+
 	updateSize = (size) => {
 		if (size !== this.state.size) {
 			this.setState((s) => {
@@ -57,11 +60,13 @@ export class MediaProvider extends React.Component {
 			})
 		}
 	}
+
 	componentWillUnmount() {
 		if (this.subscription) {
 			this.subscription.unsubscribe()
 		}
 	}
+
 	UNSAFE_componentWillUpdate(props, state) {
 		if (state.nextSize) {
 			setTimeout(() => {
@@ -69,9 +74,11 @@ export class MediaProvider extends React.Component {
 			}, 300)
 		}
 	}
+
 	maybeWrap(input) {
 		return this.state.nextSize ? this.props.loader() : input
 	}
+
 	render() {
 		return (
 			<MediaContext.Provider value={this.state}>

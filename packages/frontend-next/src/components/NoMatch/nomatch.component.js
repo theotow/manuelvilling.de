@@ -1,3 +1,4 @@
+import React from 'react'
 import { Route } from 'react-router-dom'
 import Grid from '../Grid/grid.component'
 import Spacer from '../Spacer/spacer.component'

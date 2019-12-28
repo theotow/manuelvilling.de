@@ -1,32 +1,28 @@
 import React from 'react'
 import { withRouter } from 'next/router'
-import { getClient, getBrowserSize } from '../apollo'
-import { getDataFromTree } from 'react-apollo'
+import { getClient, getBrowserSize } from './apollo'
+import { getDataFromTree } from '@apollo/react-ssr'
 import App from './index'
 
 class Next extends React.Component {
-	static async getInitialProps({ req }) {
+	static async getInitialProps({ req, AppTree }) {
 		if (req) {
-			const fetch = require('node-fetch')
-			global.fetch = fetch
-		}
-		const requestUrl = req.url
-		const browserSize = getBrowserSize(req.headers['user-agent'])
-		const AppInstance = (
-			<App
-                requestUrl={requestUrl}
-                initialState={{}}
-				staticContext={{}}
-				browserSize={browserSize}
-			/>
-		)
-		await getDataFromTree(AppInstance)
-		const initialState = getClient().extract()
-		return {
-			requestUrl,
-			initialState,
-			staticContext: {},
-			browserSize
+			const requestUrl = req.url
+			const browserSize = getBrowserSize(req.headers['user-agent'])
+			const client = getClient()
+			await getDataFromTree((
+				<AppTree
+					requestUrl={requestUrl}
+					apolloClient={client}
+					browserSize={browserSize}
+				/>
+			))
+			return {
+				requestUrl,
+				initialState: client.extract(),
+				staticContext: {},
+				browserSize
+			}
 		}
 	}
 

@@ -1,3 +1,4 @@
+import React from 'react'
 const wrapper = (file, name) => ({ height }) => (
 	<img src={file} height={height} alt={name} />
 )

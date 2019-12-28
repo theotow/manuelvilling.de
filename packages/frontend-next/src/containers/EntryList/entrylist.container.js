@@ -1,4 +1,5 @@
-import { Query } from 'react-apollo'
+import React from 'react'
+import { Query } from '@apollo/react-components'
 import { ENTRIES } from '../../queries/entries.query'
 import Entry from '../../components/Entry/entry.component'
 import Text from '../../components/Text/text.component'

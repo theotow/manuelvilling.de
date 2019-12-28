@@ -1,3 +1,4 @@
+import React from 'react'
 import Header from '../Header/header.component'
 import Spacer from '../Spacer/spacer.component'
 import Footer from '../Footer/footer.component'

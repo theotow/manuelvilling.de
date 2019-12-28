@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 export const POKE = gql`
   mutation poke($msg: String!) {
@@ -6,4 +6,4 @@ export const POKE = gql`
       success
     }
   }
-`;
+`

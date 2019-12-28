@@ -39,50 +39,50 @@ class PokeButton extends React.Component {
 
 	renderScence(scence) {
 		switch (scence) {
-			case 3: {
-				return (
-					<Portal>
-						<Heart />
-					</Portal>
-				)
-			}
-			case 2: {
-				return (
-					<Mutation
-						mutation={POKE}
-						update={() => {
-							this.changeScence(3)()
-							setTimeout(() => {
-								this.changeScence(1)()
-							}, 1000)
-						}}>
-						{(mutate, { loading }) => {
-							return (
-								<Button isBox>
-									{loading && <Loader />}
-									{!loading && (
-										<React.Fragment>
-											{iconLinkFactory(
-												mutate,
-												Icon.ThumbsUp,
-												'up'
-											)}
-											{iconLinkFactory(
-												mutate,
-												Icon.ThumbsDown,
-												'down'
-											)}
-										</React.Fragment>
-									)}
-								</Button>
-							)
-						}}
-					</Mutation>
-				)
-			}
-			default: {
-				return <Button onClick={this.changeScence(2)}>Poke me</Button>
-			}
+		case 3: {
+			return (
+				<Portal>
+					<Heart />
+				</Portal>
+			)
+		}
+		case 2: {
+			return (
+				<Mutation
+					mutation={POKE}
+					update={() => {
+						this.changeScence(3)()
+						setTimeout(() => {
+							this.changeScence(1)()
+						}, 1000)
+					}}>
+					{(mutate, { loading }) => {
+						return (
+							<Button isBox>
+								{loading && <Loader />}
+								{!loading && (
+									<React.Fragment>
+										{iconLinkFactory(
+											mutate,
+											Icon.ThumbsUp,
+											'up'
+										)}
+										{iconLinkFactory(
+											mutate,
+											Icon.ThumbsDown,
+											'down'
+										)}
+									</React.Fragment>
+								)}
+							</Button>
+						)
+					}}
+				</Mutation>
+			)
+		}
+		default: {
+			return <Button onClick={this.changeScence(2)}>Poke me</Button>
+		}
 		}
 	}
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import RouterInfo from '../../containers/RouterInfo/routerinfo.container'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import FontLight from '../../global/fonts/IBMPlexMono-Light.woff'
@@ -83,7 +84,7 @@ const Root = ({ children, staticContext, size }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<MediaProvider size={size} loader={ResizeLoader}>
-				{children()}
+				{children}
 				<GlobalStyle />
 				<RouterInfo context={staticContext} />
 			</MediaProvider>
