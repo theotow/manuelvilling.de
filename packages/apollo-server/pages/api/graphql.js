@@ -10,7 +10,7 @@ async function getEntries() {
 	).then(function(htmlString) {
 		const parsed = JSON.parse(htmlString)
 		return parsed.items
-	})
+	}).filter((item) => !item.guid.match(/ee5e226be1e2|cadb17c7df16/))
 }
 
 async function sendMessage(chatId, token, msg) {
