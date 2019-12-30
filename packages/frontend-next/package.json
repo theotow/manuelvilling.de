@@ -7,12 +7,42 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint ./",
+    "test": "jest",
     "lint-fix": "yarn lint -- --fix",
     "deploy": "../../node_modules/.bin/now -A ./frontend-next.json",
     "deploy-prod": "../../node_modules/.bin/now -A ./frontend-next.json --prod",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "jest": {
+		"testURL": "http://localhost/",
+		"moduleNameMapper": {
+			"\\.(svg|png|woff)$": "<rootDir>/tests/__mocks__/empty-module.js"
+		},
+		"setupFiles": [
+			"<rootDir>/jest.setup.js"
+		],
+		"transform": {
+			"^.+\\.js?$": "babel-jest"
+		},
+		"testPathIgnorePatterns": [
+			"/.next/",
+			"/node_modules/"
+		],
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		],
+		"coveragePathIgnorePatterns": [
+			"/node_modules/",
+			"/.next/",
+			"/coverage/"
+		]
+	},
   "dependencies": {
     "@apollo/react-components": "^3.1.3",
     "@apollo/react-ssr": "^3.1.3",
@@ -46,7 +76,9 @@
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
+    "@testing-library/react": "^9.4.0",
     "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
     "next-transpile-modules": "^2.3.1",
     "url-loader": "^1.1.2"
   }

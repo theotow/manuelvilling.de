@@ -1,10 +1,7 @@
-import { shallow, mount } from 'enzyme'
+import React from 'react'
+import {render} from '@testing-library/react'
 import App from './index'
 
-it('renders without crashing shallow', () => {
-	shallow(<App />)
-})
-
-it('renders without crashing mount', () => {
-	mount(<App />).unmount()
+test('renders without crashing', () => {
+	render(<App />)
 })
