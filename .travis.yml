@@ -18,17 +18,17 @@
       ]
     }
   },
-  "node_js": "8",
+  "node_js": "10",
+  "cache": "yarn",
   "language": "node_js",
-  "after_script": [
-    "npm run install",
-    "npm run lint",
-    "npm run test",
-    "npm run test-in"
+  "script": [
+    "yarn workspaces run lint",
+    "yarn workspaces run test"
   ],
   "before_install": [
     "export DISPLAY=:99.0",
     "sh -e /etc/init.d/xvfb start",
-    "sleep 3"
+    "sleep 3",
+    "npm install -g yarn@1.21.1"
   ]
 }

@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can open and close mobile menu 1`] = `
+<DocumentFragment>
+  <nav>
+    <ul
+      class="desktopnavcomponent__Ul-sc-1ojer77-0 elKxFq"
+    >
+      <li
+        class="desktopnavcomponent__Li-sc-1ojer77-1 ftjyxt"
+      >
+        <a
+          data-testid="mobile-nav-toggle-menu"
+          href="#"
+        >
+          <img
+            alt="Burger"
+            src="[object Object]"
+          />
+        </a>
+      </li>
+    </ul>
+    <ul
+      class="mobilenavcontainer__UlMobile-wupsm3-1 cUGEBJ"
+    >
+      <li
+        class="mobilenavcontainer__LiMobile-wupsm3-0 cnhkrF"
+      >
+        <a
+          class="textcomponent__StyledLink-sc-18da3xa-2 textcomponent__StyledLinkMobile-sc-18da3xa-3 yEZeS"
+          data-active="true"
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="mobilenavcontainer__LiMobile-wupsm3-0 cnhkrF"
+      >
+        <a
+          class="textcomponent__StyledLink-sc-18da3xa-2 textcomponent__StyledLinkMobile-sc-18da3xa-3 eGqCuI"
+          href="/blog"
+        >
+          Blog
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`can open and close mobile menu 2`] = `
+<DocumentFragment>
+  <nav>
+    <ul
+      class="desktopnavcomponent__Ul-sc-1ojer77-0 elKxFq"
+    >
+      <li
+        class="desktopnavcomponent__Li-sc-1ojer77-1 ftjyxt"
+      >
+        <a
+          data-testid="mobile-nav-toggle-menu"
+          href="#"
+        >
+          <img
+            alt="Burger"
+            src="[object Object]"
+          />
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

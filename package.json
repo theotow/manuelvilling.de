@@ -1,29 +1,26 @@
 {
-  "name": "nextjs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "install": "./node_modules/.bin/lerna bootstrap",
-    "clean": "./node_modules/.bin/lerna clean --yes",
-    "start-graphql": "./node_modules/.bin/lerna --scope @local/apollo-server run start --stream",
-    "reset": "npm run clean && npm run install",
-    "pretty-all": "./node_modules/.bin/lerna run pretty --stream --parallel",
-    "lint-all": "./node_modules/.bin/lerna run lint --stream --parallel",
-    "precommit": "npm run pretty-all && npm run lint-all",
-    "test": "./node_modules/.bin/lerna run test",
-    "lint": "./node_modules/.bin/lerna run lint",
-    "test-in": "./node_modules/.bin/lerna run test-in"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "husky": "^1.1.0",
-    "lerna": "^3.4.0"
-  }
+    "name": "manuelvilling.de",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged --pattern '**/*.js'"
+        }
+    },
+    "scripts": {
+      "pretty-all": "prettier --write '**/*.js'"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {
+        "prettier": "^1.19.1",
+        "husky": "^3.1.0",
+        "pretty-quick": "^2.0.1",
+        "now": "^16.7.0"
+    }
 }

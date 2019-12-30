@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "name": "apollo-server",
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@now/next"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "$1",
+        "continue": true
+      }
+    ]
+  }
