@@ -38,7 +38,7 @@ class MobileNav extends React.Component {
 			<nav>
 				<Ul>
 					<Li>
-						<a href="#" onClick={this.toggle}>
+						<a href="#" data-testid="mobile-nav-toggle-menu" onClick={this.toggle}>
 							<Icon.Burger />
 						</a>
 					</Li>
