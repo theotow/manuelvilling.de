@@ -2,17 +2,17 @@
 
 [![Build Status](https://travis-ci.com/theotow/manuelvilling.de.svg?branch=master)](https://travis-ci.com/theotow/manuelvilling.de)
 
-This will be the repo where i will host my new portfolio page, i just released the 2018 version.
+This will be the repo where i will host my new portfolio page, it was released in 2018, and updaed in 2019 to meet the latest standards.
 
 ### Features
 
-[x] Serverless hosting of main website + graphql endpoint
+[x] Serverless hosting of main website + graphql endpoint via zeit.co
 
-[x] www to non-www redirect with S3 bucket
+[x] www to non-www redirect via aws s3 bucket
 
-[x] mono repo with lerna
+[x] mono repo with yarn
 
-[x] serverside rendering
+[x] serverside rendering with next.js
 
 [x] styled-components, react-router
 
@@ -24,18 +24,8 @@ This will be the repo where i will host my new portfolio page, i just released t
 
 [x] slick design
 
-[ ] tests with jest and testcafe
+[x] tests with jest
 
-[x] avoid lambada cold starts - pinging lambada via cron
+[x] ~~gzip~~ brotli
 
-[x] use cloudfront to host assets
-
-[x] use api.manuelvilling.de url
-
-[ ] reduce bundle size
-
-[ ] gzip
-
-[x] reduce lamda size to 128 for both
-
-[x] add loading for poking
+[x] http2
