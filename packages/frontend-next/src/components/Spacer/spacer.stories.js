@@ -13,7 +13,7 @@ export const isVStory = () => (
 			{() => (
 				<div>
 					<Spacer isV size="40px" />
-          text
+					text
 				</div>
 			)}
 		</Root>
@@ -30,7 +30,7 @@ export const isHStory = () => (
 			{() => (
 				<div style={{ display: 'flex' }}>
 					<Spacer isH size="40px" />
-          text
+					text
 				</div>
 			)}
 		</Root>

@@ -1,85 +1,87 @@
 {
-  "name": "frontend-next",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint ./",
-    "test": "jest",
-    "lint-fix": "yarn lint -- --fix",
-    "deploy": "../../node_modules/.bin/now -A ./frontend-next.json",
-    "deploy-prod": "../../node_modules/.bin/now -A ./frontend-next.json --prod",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+ "name": "frontend-next",
+ "version": "0.1.0",
+ "private": true,
+ "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint ./",
+  "test": "jest",
+  "pretty": "prettier --write './src/**/*.js'",
+  "lint-fix": "yarn lint -- --fix",
+  "deploy": "../../node_modules/.bin/now -A ./frontend-next.json",
+  "deploy-prod": "../../node_modules/.bin/now -A ./frontend-next.json --prod",
+  "storybook": "start-storybook -p 6006",
+  "build-storybook": "build-storybook"
+ },
+ "jest": {
+  "testURL": "http://localhost/",
+  "moduleNameMapper": {
+   "\\.(svg|png|woff)$": "<rootDir>/tests/__mocks__/empty-module.js"
   },
-  "jest": {
-		"testURL": "http://localhost/",
-		"moduleNameMapper": {
-			"\\.(svg|png|woff)$": "<rootDir>/tests/__mocks__/empty-module.js"
-		},
-		"setupFiles": [
-			"<rootDir>/jest.setup.js"
-		],
-		"transform": {
-			"^.+\\.js?$": "babel-jest"
-		},
-		"testPathIgnorePatterns": [
-			"/.next/",
-			"/node_modules/"
-		],
-		"moduleFileExtensions": [
-			"ts",
-			"tsx",
-			"js",
-			"jsx",
-			"json",
-			"node"
-		],
-		"coveragePathIgnorePatterns": [
-			"/node_modules/",
-			"/.next/",
-			"/coverage/"
-		]
-	},
-  "dependencies": {
-    "@apollo/react-components": "^3.1.3",
-    "@apollo/react-ssr": "^3.1.3",
-    "apollo-boost": "^0.4.7",
-    "apollo-cache": "^1.3.2",
-    "apollo-client": "^2.6.4",
-    "apollo-link": "^1.2.12",
-    "apollo-utilities": "^1.3.2",
-    "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.17.0",
-    "graphql": "^14.5.8",
-    "graphql-tag": "^2.10.1",
-    "mobile-detect": "^1.4.4",
-    "next": "9.1.6",
-    "node-fetch": "^2.6.0",
-    "react": "^16.6.3",
-    "react-animations": "^1.0.0",
-    "react-apollo": "3.1.3",
-    "react-dom": "^16.6.3",
-    "react-router": "^5.1.2",
-    "react-router-config": "^5.1.1",
-    "react-router-dom": "^5.1.2",
-    "rxjs": "^6.5.3",
-    "rxjs-compat": "^6.5.3",
-    "storybook": "^5.1.11",
-    "styled-components": "4.4.1"
+  "setupFiles": [
+   "<rootDir>/jest.setup.js"
+  ],
+  "transform": {
+   "^.+\\.js?$": "babel-jest"
   },
-  "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
-    "@testing-library/react": "^9.4.0",
-    "babel-loader": "^8.0.6",
-    "jest": "^24.9.0",
-    "next-transpile-modules": "^2.3.1",
-    "url-loader": "^1.1.2"
-  }
+  "testPathIgnorePatterns": [
+   "/.next/",
+   "/node_modules/"
+  ],
+  "moduleFileExtensions": [
+   "ts",
+   "tsx",
+   "js",
+   "jsx",
+   "json",
+   "node"
+  ],
+  "coveragePathIgnorePatterns": [
+   "/node_modules/",
+   "/.next/",
+   "/coverage/"
+  ]
+ },
+ "dependencies": {
+  "@apollo/react-components": "^3.1.3",
+  "@apollo/react-ssr": "^3.1.3",
+  "apollo-boost": "^0.4.7",
+  "apollo-cache": "^1.3.2",
+  "apollo-client": "^2.6.4",
+  "apollo-link": "^1.2.12",
+  "apollo-utilities": "^1.3.2",
+  "graphql": "^14.5.8",
+  "graphql-tag": "^2.10.1",
+  "mobile-detect": "^1.4.4",
+  "next": "9.1.6",
+  "node-fetch": "^2.6.0",
+  "react": "^16.6.3",
+  "react-animations": "^1.0.0",
+  "react-apollo": "3.1.3",
+  "react-dom": "^16.6.3",
+  "react-router": "^5.1.2",
+  "react-router-config": "^5.1.1",
+  "react-router-dom": "^5.1.2",
+  "rxjs": "^6.5.3",
+  "rxjs-compat": "^6.5.3",
+  "storybook": "^5.1.11",
+  "styled-components": "4.4.1"
+ },
+ "devDependencies": {
+  "eslint": "^6.8.0",
+  "eslint-plugin-react": "^7.17.0",
+  "prettier": "^1.19.1",
+  "@babel/core": "^7.7.7",
+  "@storybook/addon-actions": "^5.2.8",
+  "@storybook/addon-links": "^5.2.8",
+  "@storybook/addons": "^5.2.8",
+  "@storybook/react": "^5.2.8",
+  "@testing-library/react": "^9.4.0",
+  "babel-loader": "^8.0.6",
+  "jest": "^24.9.0",
+  "next-transpile-modules": "^2.3.1",
+  "url-loader": "^1.1.2"
+ }
 }

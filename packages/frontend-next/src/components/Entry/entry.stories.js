@@ -9,7 +9,11 @@ export default {
 
 export const defaultStory = () => (
 	<StaticRouter location="/" context={{}}>
-		<Root>{() => <Entry title="title" link="https://google.com" date="date" />}</Root>
+		<Root>
+			{() => (
+				<Entry title="title" link="https://google.com" date="date" />
+			)}
+		</Root>
 	</StaticRouter>
 )
 

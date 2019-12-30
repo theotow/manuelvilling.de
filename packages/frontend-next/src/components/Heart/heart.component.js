@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Icon from '../../components/Icon/icon.component'
 import styled from 'styled-components'

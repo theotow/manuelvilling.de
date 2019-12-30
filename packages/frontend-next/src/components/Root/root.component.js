@@ -76,7 +76,7 @@ const theme = {
 	boldFont: `
 		font-family: 'PlexMono';
 		font-weight: 600;
-	`
+	`,
 }
 
 const Root = ({ children, size }) => {

@@ -13,7 +13,7 @@ export const defaultStory = () => (
 		<Root>
 			{() => (
 				<React.Fragment>
-					{map(values(Icons), Icon => (
+					{map(values(Icons), (Icon) => (
 						<div>
 							<Icon height="32" />
 							<hr />

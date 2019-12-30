@@ -26,7 +26,7 @@ function mapWidthHeightToSize({ width }) {
 function mapEventToSizes(event) {
 	return {
 		width: event.target.innerWidth,
-		height: event.target.innerHeight
+		height: event.target.innerHeight,
 	}
 }
 
@@ -42,13 +42,13 @@ export class MediaProvider extends React.Component {
 				startWith({
 					target: {
 						innerWidth: window.innerWidth,
-						innerHeight: window.innerHeight
-					}
+						innerHeight: window.innerHeight,
+					},
 				}),
 				debounce(() => timer(200)),
 				map(mapEventToSizes),
 				map(mapWidthHeightToSize),
-				tap(this.updateSize)
+				tap(this.updateSize),
 			)
 			.subscribe()
 	}

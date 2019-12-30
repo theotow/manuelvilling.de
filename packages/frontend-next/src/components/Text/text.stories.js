@@ -28,8 +28,10 @@ export const activeStyledLink = () => (
 		<Root>
 			{() => (
 				<div>
-					<Text.ActiveStyledLink to="/page">Paragraph</Text.ActiveStyledLink>
-          text
+					<Text.ActiveStyledLink to="/page">
+						Paragraph
+					</Text.ActiveStyledLink>
+					text
 				</div>
 			)}
 		</Root>
@@ -45,8 +47,10 @@ export const activeStyledLinkMobile = () => (
 		<Root>
 			{() => (
 				<div>
-					<Text.ActiveStyledLinkMobile to="/page">Paragraph</Text.ActiveStyledLinkMobile>
-          text
+					<Text.ActiveStyledLinkMobile to="/page">
+						Paragraph
+					</Text.ActiveStyledLinkMobile>
+					text
 				</div>
 			)}
 		</Root>

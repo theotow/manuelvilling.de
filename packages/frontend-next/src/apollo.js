@@ -8,11 +8,11 @@ export function initClient(initialState) {
 		connectToDevTools: isBrowser(),
 		link: new HttpLink({
 			uri: process.env.API_URL,
-			fetch: !isBrowser() && require('node-fetch')
+			fetch: !isBrowser() && require('node-fetch'),
 		}),
 		ssrMode: !isBrowser(),
 		ssrForceFetchDelay: 100,
-		cache: new InMemoryCache().restore(initialState)
+		cache: new InMemoryCache().restore(initialState),
 	})
 	return client
 }

@@ -5,15 +5,15 @@ const routes = [
 	{
 		path: '/',
 		component: withFadeIn(HomePage),
-		exact: true
+		exact: true,
 	},
 	{
 		path: '/blog',
-		component: withFadeIn(BlogPage)
+		component: withFadeIn(BlogPage),
 	},
 	{
-		component: NoMatchPage
-	}
+		component: NoMatchPage,
+	},
 ]
 
 export default routes

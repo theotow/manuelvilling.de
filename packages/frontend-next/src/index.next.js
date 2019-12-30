@@ -10,18 +10,18 @@ class Next extends React.Component {
 			const requestUrl = req.url
 			const browserSize = getBrowserSize(req.headers['user-agent'])
 			const client = getClient()
-			await getDataFromTree((
+			await getDataFromTree(
 				<AppTree
 					requestUrl={requestUrl}
 					apolloClient={client}
 					browserSize={browserSize}
-				/>
-			))
+				/>,
+			)
 			return {
 				requestUrl,
 				initialState: client.extract(),
 				staticContext: {},
-				browserSize
+				browserSize,
 			}
 		}
 	}

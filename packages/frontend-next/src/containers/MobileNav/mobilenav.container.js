@@ -26,7 +26,7 @@ const UlMobile = styled.ul`
 
 class MobileNav extends React.Component {
 	state = {
-		open: false
+		open: false,
 	}
 
 	toggle = () => {
@@ -38,7 +38,10 @@ class MobileNav extends React.Component {
 			<nav>
 				<Ul>
 					<Li>
-						<a href="#" data-testid="mobile-nav-toggle-menu" onClick={this.toggle}>
+						<a
+							href="#"
+							data-testid="mobile-nav-toggle-menu"
+							onClick={this.toggle}>
 							<Icon.Burger />
 						</a>
 					</Li>

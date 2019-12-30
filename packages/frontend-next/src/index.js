@@ -19,8 +19,7 @@ export default class App extends React.Component {
 		const Router = isBrowser() ? BrowserRouter : StaticRouter
 		return (
 			<ApolloProvider client={getClient(this.props.initialState)}>
-				<Router
-					location={this.props.requestUrl}>
+				<Router location={this.props.requestUrl}>
 					<Root
 						staticContext={this.props.staticContext}
 						size={this.props.browserSize}>
