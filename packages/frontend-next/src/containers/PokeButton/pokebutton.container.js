@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import Icon from '../../components/Icon/icon.component'
 import Heart from '../../components/Heart/heart.component'
@@ -28,16 +28,14 @@ const modalRoot =
 const Portal = (props) =>
 	modalRoot ? ReactDOM.createPortal(props.children, modalRoot) : null
 
-class PokeButton extends React.Component {
-	state = {
-		scence: undefined,
+const PokeButton = () => {
+	const [scence, setScene] = useState()
+
+	const changeScence = (scence) => () => {
+		setScene(scence)
 	}
 
-	changeScence = (scence) => () => {
-		this.setState({ scence })
-	}
-
-	renderScence(scence) {
+	const renderScence = () => {
 		switch (scence) {
 			case 3: {
 				return (
@@ -51,9 +49,9 @@ class PokeButton extends React.Component {
 					<Mutation
 						mutation={POKE}
 						update={() => {
-							this.changeScence(3)()
+							changeScence(3)()
 							setTimeout(() => {
-								this.changeScence(1)()
+								changeScence(1)()
 							}, 1000)
 						}}>
 						{(mutate, { loading }) => {
@@ -81,14 +79,12 @@ class PokeButton extends React.Component {
 				)
 			}
 			default: {
-				return <Button onClick={this.changeScence(2)}>Poke me</Button>
+				return <Button onClick={changeScence(2)}>Poke me</Button>
 			}
 		}
 	}
 
-	render() {
-		return this.renderScence(this.state.scence)
-	}
+	return renderScence()
 }
 
 export default PokeButton

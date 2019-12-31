@@ -10,23 +10,18 @@ import routes from './routes'
 import Root from './components/Root/root.component'
 import AppWrapper from './components/AppWrapper/appwrapper.component'
 
-export default class App extends React.Component {
-	constructor(props) {
-		super(props)
-	}
-
-	render() {
-		const Router = isBrowser() ? BrowserRouter : StaticRouter
-		return (
-			<ApolloProvider client={getClient(this.props.initialState)}>
-				<Router location={this.props.requestUrl}>
-					<Root
-						staticContext={this.props.staticContext}
-						size={this.props.browserSize}>
-						<AppWrapper>{renderRoutes(routes)}</AppWrapper>
-					</Root>
-				</Router>
-			</ApolloProvider>
-		)
-	}
+const App = (props) => {
+	const Router = isBrowser() ? BrowserRouter : StaticRouter
+	return (
+		<ApolloProvider client={getClient(props.initialState)}>
+			<Router location={props.requestUrl}>
+				<Root
+					staticContext={props.staticContext}
+					size={props.browserSize}>
+					<AppWrapper>{renderRoutes(routes)}</AppWrapper>
+				</Root>
+			</Router>
+		</ApolloProvider>
+	)
 }
+export default App

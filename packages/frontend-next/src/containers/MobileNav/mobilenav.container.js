@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { withRouter } from 'react-router'
 import styled from 'styled-components'
 import Text from '../../components/Text/text.component'
@@ -24,45 +24,41 @@ const UlMobile = styled.ul`
 	border-top: 1px solid #000;
 `
 
-class MobileNav extends React.Component {
-	state = {
-		open: false,
+const MobileNav = () => {
+	const [open, setOpen] = useState(false)
+
+	const toggle = () => {
+		setOpen((isOpen) => !isOpen)
 	}
 
-	toggle = () => {
-		this.setState((state) => ({ open: !state.open }))
-	}
-
-	render() {
-		return (
-			<nav>
-				<Ul>
-					<Li>
-						<a
-							href="#"
-							data-testid="mobile-nav-toggle-menu"
-							onClick={this.toggle}>
-							<Icon.Burger />
-						</a>
-					</Li>
-				</Ul>
-				{this.state.open && (
-					<UlMobile>
-						<LiMobile>
-							<Text.ActiveStyledLinkMobile to="/">
-								Home
-							</Text.ActiveStyledLinkMobile>
-						</LiMobile>
-						<LiMobile>
-							<Text.ActiveStyledLinkMobile to="/blog">
-								Blog
-							</Text.ActiveStyledLinkMobile>
-						</LiMobile>
-					</UlMobile>
-				)}
-			</nav>
-		)
-	}
+	return (
+		<nav>
+			<Ul>
+				<Li>
+					<a
+						href="#"
+						data-testid="mobile-nav-toggle-menu"
+						onClick={toggle}>
+						<Icon.Burger />
+					</a>
+				</Li>
+			</Ul>
+			{open && (
+				<UlMobile>
+					<LiMobile>
+						<Text.ActiveStyledLinkMobile to="/">
+							Home
+						</Text.ActiveStyledLinkMobile>
+					</LiMobile>
+					<LiMobile>
+						<Text.ActiveStyledLinkMobile to="/blog">
+							Blog
+						</Text.ActiveStyledLinkMobile>
+					</LiMobile>
+				</UlMobile>
+			)}
+		</nav>
+	)
 }
 
 const MobileNavWithRouter = withRouter(({ location }) => (
