@@ -1,5 +1,6 @@
 import React from 'react'
 import Icon from '../../components/Icon/icon.component'
+import Text from '../Text/text.component'
 import styled from 'styled-components'
 
 const Positioner = styled.div`
@@ -14,9 +15,16 @@ const Positioner = styled.div`
 	align-items: center;
 `
 
+const Center = styled.div`
+	text-align: center;
+`
+
 const Heart = () => (
 	<Positioner>
-		<Icon.Heart />
+		<Center>
+			<Icon.Heart />
+			<Text.P>Got a text, thx ;)</Text.P>
+		</Center>
 	</Positioner>
 )
 
