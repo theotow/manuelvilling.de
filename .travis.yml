@@ -8,16 +8,6 @@
     ]
   },
   "group": "stable",
-  "addons": {
-    "apt": {
-      "sources": [
-        "google-chrome"
-      ],
-      "packages": [
-        "google-chrome-stable"
-      ]
-    }
-  },
   "node_js": "10",
   "cache": "yarn",
   "language": "node_js",
