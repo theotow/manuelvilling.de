@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server-micro": "2.9.14",
+    "apollo-server-micro": "2.14.2",
     "bluebird": "^3.7.2",
     "dotenv": "^8.2.0",
     "graphql": "^14.5.8",
