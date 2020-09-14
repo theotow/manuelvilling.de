@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, StaticRouter } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
 
-import { ApolloProvider } from 'react-apollo'
+import { ApolloProvider } from '@apollo/client'
 
 import { isBrowser, getClient } from './apollo'
 
