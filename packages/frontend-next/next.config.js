@@ -1,13 +1,13 @@
 const withTM = require('next-transpile-modules')
+require('dotenv').config()
 
 module.exports = withTM({
 	target: 'serverless',
 	transpileModules: [],
 	env: {
-		API_URL:
-			process.env.NODE_ENV === 'production'
-				? 'https://apollo-server.manuel1.now.sh/api/graphql'
-				: 'http://localhost:3001/api/graphql',
+		TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID,
+		TELEGRAM_TOKEN: process.env.TELEGRAM_TOKEN,
+		API_URL: '/api/graphql',
 	},
 	webpack: (config) => {
 		config.module.rules.push({

@@ -1,23 +1,16 @@
 import React from 'react'
 import Spacer from './spacer.component'
-import { StaticRouter } from 'react-router-dom'
-import Root from '../Root/root.component'
 
 export default {
 	title: 'Spacer',
+	component: Spacer,
 }
 
 export const isVStory = () => (
-	<StaticRouter location="/" context={{}}>
-		<Root>
-			{() => (
-				<div>
-					<Spacer isV size="40px" />
-					text
-				</div>
-			)}
-		</Root>
-	</StaticRouter>
+	<div>
+		<Spacer isV size="40px" />
+		text
+	</div>
 )
 
 isVStory.story = {
@@ -25,16 +18,10 @@ isVStory.story = {
 }
 
 export const isHStory = () => (
-	<StaticRouter location="/" context={{}}>
-		<Root>
-			{() => (
-				<div style={{ display: 'flex' }}>
-					<Spacer isH size="40px" />
-					text
-				</div>
-			)}
-		</Root>
-	</StaticRouter>
+	<div style={{ display: 'flex' }}>
+		<Spacer isH size="40px" />
+		text
+	</div>
 )
 
 isHStory.story = {

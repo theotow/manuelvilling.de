@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import Icon from '../../components/Icon/icon.component'
 import Heart from '../../components/Heart/heart.component'
-import { Mutation } from 'react-apollo'
+import { useMutation } from '@apollo/client'
 import { POKE } from '../../queries/poke.mutation'
 import Loader from '../../components/Loader/loader.component'
 import Button from '../../components/Button/button.component'
@@ -30,6 +30,14 @@ const Portal = (props) =>
 
 const PokeButton = () => {
 	const [scence, setScene] = useState()
+	const [poke, { loading }] = useMutation(POKE, {
+		update: () => {
+			changeScence(3)()
+			setTimeout(() => {
+				changeScence(1)()
+			}, 1000)
+		},
+	})
 
 	const changeScence = (scence) => () => {
 		setScene(scence)
@@ -46,36 +54,15 @@ const PokeButton = () => {
 			}
 			case 2: {
 				return (
-					<Mutation
-						mutation={POKE}
-						update={() => {
-							changeScence(3)()
-							setTimeout(() => {
-								changeScence(1)()
-							}, 1000)
-						}}>
-						{(mutate, { loading }) => {
-							return (
-								<Button isBox>
-									{loading && <Loader />}
-									{!loading && (
-										<React.Fragment>
-											{iconLinkFactory(
-												mutate,
-												Icon.ThumbsUp,
-												'up',
-											)}
-											{iconLinkFactory(
-												mutate,
-												Icon.ThumbsDown,
-												'down',
-											)}
-										</React.Fragment>
-									)}
-								</Button>
-							)
-						}}
-					</Mutation>
+					<Button isBox>
+						{loading && <Loader />}
+						{!loading && (
+							<React.Fragment>
+								{iconLinkFactory(poke, Icon.ThumbsUp, 'up')}
+								{iconLinkFactory(poke, Icon.ThumbsDown, 'down')}
+							</React.Fragment>
+						)}
+					</Button>
 				)
 			}
 			default: {

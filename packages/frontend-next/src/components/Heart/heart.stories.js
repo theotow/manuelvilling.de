@@ -1,18 +1,11 @@
 import React from 'react'
-import { StaticRouter } from 'react-router-dom'
-import Root from '../Root/root.component'
 import Heart from './heart.component'
 
 export default {
 	title: 'Heart',
+	component: Heart,
 }
 
-export const defaultStory = () => (
-	<StaticRouter location="/" context={{}}>
-		<Root>{() => <Heart />}</Root>
-	</StaticRouter>
-)
+const Template = (args) => <Heart {...args} />
 
-defaultStory.story = {
-	name: 'default',
-}
+export const Default = Template.bind({})

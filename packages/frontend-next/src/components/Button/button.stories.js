@@ -1,28 +1,16 @@
 import React from 'react'
 import Button from './button.component'
-import { StaticRouter } from 'react-router-dom'
-import Root from '../Root/root.component'
 
 export default {
 	title: 'Button',
+	component: Button,
 }
 
-export const defaultStory = () => (
-	<StaticRouter location="/" context={{}}>
-		<Root>{() => <Button>Poke me</Button>}</Root>
-	</StaticRouter>
-)
+const Template = (args) => <Button {...args} />
 
-defaultStory.story = {
-	name: 'default',
-}
+export const Default = Template.bind({})
 
-export const isBoxStory = () => (
-	<StaticRouter location="/" context={{}}>
-		<Root>{() => <Button isBox>this is a div</Button>}</Root>
-	</StaticRouter>
-)
-
-isBoxStory.story = {
-	name: 'isBox',
+Default.args = {
+	isBox: false,
+	children: 'Next',
 }
