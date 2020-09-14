@@ -9,7 +9,7 @@
         "lint": "eslint ./",
         "test": "jest",
         "lint-fix": "yarn lint -- --fix",
-        "deploy": "../../node_modules/.bin/now -A ./frontend-next.json",
+        "deploy": "../../node_modules/.bin/now -A ./frontend-next.json -b TELEGRAM_CHAT_ID=@telegram_chat_id -b TELEGRAM_TOKEN=@telegram_token",
         "deploy-prod": "../../node_modules/.bin/now -A ./frontend-next.json --prod",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
@@ -66,9 +66,15 @@
         "rxjs": "^6.5.3",
         "rxjs-compat": "^6.5.3",
         "storybook": "^5.1.11",
-        "styled-components": "4.4.1"
+        "styled-components": "4.4.1",
+        "telegraf": "^3.34.1",
+        "micro-cors": "^0.1.1",
+        "apollo-server-micro": "2.9.14",
+        "request": "^2.87.0",
+        "request-promise": "^4.2.2"
     },
     "devDependencies": {
+        "dotenv": "^8.2.0",
         "@babel/core": "^7.7.7",
         "@storybook/addon-actions": "^5.2.8",
         "@storybook/addon-links": "^5.2.8",
