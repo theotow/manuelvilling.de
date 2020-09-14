@@ -9,8 +9,8 @@
         "lint": "eslint ./",
         "test": "jest",
         "lint-fix": "yarn lint -- --fix",
-        "deploy": "../../node_modules/.bin/now -A ./frontend-next.json -b TELEGRAM_CHAT_ID=@telegram_chat_id -b TELEGRAM_TOKEN=@telegram_token",
-        "deploy-prod": "../../node_modules/.bin/now -A ./frontend-next.json --prod -b TELEGRAM_CHAT_ID=@telegram_chat_id -b TELEGRAM_TOKEN=@telegram_token",
+        "deploy": "../../node_modules/.bin/vercel -A ./frontend-next.json -b TELEGRAM_CHAT_ID=@telegram_chat_id -b TELEGRAM_TOKEN=@telegram_token",
+        "deploy-prod": "../../node_modules/.bin/vercel -A ./frontend-next.json --prod -b TELEGRAM_CHAT_ID=@telegram_chat_id -b TELEGRAM_TOKEN=@telegram_token",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
     },
