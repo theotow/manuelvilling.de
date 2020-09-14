@@ -1,18 +1,11 @@
 import React from 'react'
-import { StaticRouter } from 'react-router-dom'
-import Root from '../Root/root.component'
 import Footer from './footer.component'
 
 export default {
 	title: 'Footer',
+	component: Footer,
 }
 
-export const defaultStory = () => (
-	<StaticRouter location="/" context={{}}>
-		<Root>{() => <Footer />}</Root>
-	</StaticRouter>
-)
+const Template = (args) => <Footer {...args} />
 
-defaultStory.story = {
-	name: 'default',
-}
+export const Default = Template.bind({})

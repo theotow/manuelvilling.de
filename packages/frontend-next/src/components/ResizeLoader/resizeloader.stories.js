@@ -1,18 +1,11 @@
 import React from 'react'
-import { StaticRouter } from 'react-router-dom'
-import Root from '../Root/root.component'
 import ResizeLoader from './resizeloader.component'
 
 export default {
 	title: 'ResizeLoader',
+	component: ResizeLoader,
 }
 
-export const defaultStory = () => (
-	<StaticRouter location="/" context={{}}>
-		<Root>{() => <ResizeLoader />}</Root>
-	</StaticRouter>
-)
+const Template = (args) => <ResizeLoader {...args} />
 
-defaultStory.story = {
-	name: 'default',
-}
+export const Default = Template.bind({})

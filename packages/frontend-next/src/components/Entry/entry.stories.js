@@ -1,22 +1,17 @@
 import React from 'react'
-import { StaticRouter } from 'react-router-dom'
-import Root from '../Root/root.component'
 import Entry from './entry.component'
 
 export default {
 	title: 'Entry',
+	component: Entry,
 }
 
-export const defaultStory = () => (
-	<StaticRouter location="/" context={{}}>
-		<Root>
-			{() => (
-				<Entry title="title" link="https://google.com" date="date" />
-			)}
-		</Root>
-	</StaticRouter>
-)
+const Template = (args) => <Entry {...args} />
 
-defaultStory.story = {
-	name: 'default',
+export const Default = Template.bind({})
+
+Default.args = {
+	title: 'title',
+	link: 'https://google.com',
+	date: 'date',
 }

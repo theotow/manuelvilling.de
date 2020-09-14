@@ -1,18 +1,15 @@
 import React from 'react'
 import AppWrapper from './appwrapper.component'
-import { StaticRouter } from 'react-router-dom'
-import Root from '../Root/root.component'
 
 export default {
 	title: 'AppWrapper',
+	component: AppWrapper,
 }
 
-export const defaultStory = () => (
-	<StaticRouter location="/" context={{}}>
-		<Root>{() => <AppWrapper>content</AppWrapper>}</Root>
-	</StaticRouter>
-)
+const Template = (args) => <AppWrapper {...args} />
 
-defaultStory.story = {
-	name: 'default',
+export const Default = Template.bind({})
+
+Default.args = {
+	children: 'test',
 }
