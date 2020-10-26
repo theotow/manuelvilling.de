@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Icon from '../Icon/icon.component'
 import Grid from '../Grid/grid.component'
 import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 
 const FooterWrap = styled.footer`
 	position: fixed;
@@ -37,11 +38,19 @@ const Gradient = styled.div`
 	height: 260px;
 `
 
+const linkStyles = (props) => `
+opacity: 0.4;
+${props.theme.lightFont};
+color: #000;
+font-size: 10px;
+text-decoration: none;
+`
+
 const AttrLink = styled.a`
-	opacity: 0.4;
-	${(props) => props.theme.lightFont} color: #000;
-	font-size: 10px;
-	text-decoration: none;
+	${(props) => linkStyles(props)}
+`
+const StyledRouterLink = styled(RouterLink)`
+	${(props) => linkStyles(props)}
 `
 
 const Footer = () => (
@@ -49,8 +58,9 @@ const Footer = () => (
 		<FooterWrap>
 			<Grid.Container>
 				<Grid.Row>
+					<StyledRouterLink to="/imprint">Imprint, </StyledRouterLink>
 					<AttrLink href="https://www.emojione.com" target="_blank">
-						Emoji icons provided free by EmojiOne
+						Credit: Emoji icons provided free by EmojiOne
 					</AttrLink>
 					<Ul>
 						<Li>
