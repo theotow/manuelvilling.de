@@ -23,12 +23,6 @@ const Home = () => (
 			<Text.P maxWidth="520px">
 				I also like golang and devops + c#/.NET.
 			</Text.P>
-			<Text.P maxWidth="520px">
-				Currently looking for a new gig in berlin or remote.
-			</Text.P>
-			<Text.P maxWidth="520px">
-				Im also AWS Certified Solution Architect.
-			</Text.P>
 			<Spacer isV size="20px" />
 			<PokeButton />
 		</Grid.Row>
